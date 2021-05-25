@@ -1,10 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { createStore, applyMiddleware } from 'redux'
-import { createLogger } from 'redux-logger'
+// import { createLogger } from 'redux-logger'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
-import { composeWithDevTools } from 'redux-devtools-extension'
+// import { composeWithDevTools } from 'redux-devtools-extension'
 import './index.css';
 
 import App from './App';
@@ -15,7 +15,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 
 const store = createStore(
   reducer,
-  composeWithDevTools(applyMiddleware(thunk, createLogger())))
+  applyMiddleware(thunk))
 
 render(
   <Provider store={store}>
@@ -23,4 +23,3 @@ render(
   </Provider>,
   document.getElementById('root')
 )
-
